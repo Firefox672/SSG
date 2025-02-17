@@ -2,6 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const { exec } = require("child_process");
+require("dotenv").config();
+
 
 
 const app = express();
@@ -9,7 +11,8 @@ app.use(express.json());
 app.use(cors());
 
 // Replace with your MongoDB Atlas connection string
-const mongoURI = "mongodb+srv://firefox672:5MEXKmbmLE5ExXeI@cluster0.37waq.mongodb.net/testing";
+const mongoURI = process.env.MONGO_URI;
+
 
 mongoose
   .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -34,10 +37,11 @@ const YoutubeEntry = mongoose.model("YoutubeEntry", youtubeSchema);
 // Function to extract YouTube video ID from a given link
 function extractVideoID(url) {
   const regex =
-    /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/;
+    /(?:youtube\.com\/(?:.*[?&]v=|.*\/v\/|.*\/embed\/|.*\/shorts\/)|youtu\.be\/|youtube\.com\/live\/)([^"&?\/\s]{11})/;
   const match = url.match(regex);
   return match ? match[1] : null;
 }
+
 
 // API endpoint to handle form submission
 app.post("/submit", async (req, res) => {
@@ -70,3 +74,12 @@ app.post("/submit", async (req, res) => {
 // Start the server
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+const rateLimit = require("express-rate-limit");
+
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // Limit each IP to 100 requests per windowMs
+});
+
+app.use(limiter);
