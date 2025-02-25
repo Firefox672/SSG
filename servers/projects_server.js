@@ -9,7 +9,7 @@ require("dotenv").config();
 const app = express();
 app.use(express.json());
 app.use(cors({ 
-  origin: ["http://localhost:5501", "https://yourapp.onrender.com"],
+  origin: ["http://localhost:5502", "https://yourapp.onrender.com"],
   methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type"],
 }));  // Allow all origins
