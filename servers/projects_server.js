@@ -9,7 +9,6 @@ require("dotenv").config();
 const app = express();
 app.use(express.json());
 app.use(cors());
-app.use(dotenv());
 
 // Replace with your MongoDB Atlas connection string
 const mongoURI = process.env.MONGO_URI;
