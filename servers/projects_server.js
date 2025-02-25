@@ -9,7 +9,7 @@ require("dotenv").config();
 const app = express();
 app.use(express.json());
 app.use(cors({ 
-  origin: ["http://localhost:5502", "https://yourapp.onrender.com"],
+  origin: ["http://localhost:5502", "https://ssg-f83i.onrender.com"],
   methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type"],
 }));  // Allow all origins
@@ -75,7 +75,7 @@ app.post("/submit", async (req, res) => {
 });
 
 // Start the server
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 10000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
 const rateLimit = require("express-rate-limit");
