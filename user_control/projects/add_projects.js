@@ -21,7 +21,7 @@ document.getElementById("youtubeForm").addEventListener("submit", async (e) => {
     const data = { youtubeLink, row };
 
     try {
-        const response = await fetch("https://yourapp.onrender.com/submit", {
+        const response = await fetch("http://yourapp.onrender.com/submit", { 
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data),
