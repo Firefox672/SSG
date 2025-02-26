@@ -2,14 +2,28 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const { exec } = require("child_process");
-
+require("dotenv").config();
+const rateLimit = require("express-rate-limit");
 
 const app = express();
 app.use(express.json());
-app.use(cors());
 
-// Replace with your MongoDB Atlas connection string
-const mongoURI = "mongodb+srv://firefox672:5MEXKmbmLE5ExXeI@cluster0.37waq.mongodb.net/testing";
+// CORS: Only allow specific origins
+app.use(cors({ 
+  origin: ["http://localhost:5502", "https://ssg-event-server.onrender.com", "https://firefox672.github.io"], 
+  methods: ["GET", "POST"], 
+  allowedHeaders: ["Content-Type"]
+}));
+
+// Rate limiting to prevent abuse
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // Limit each IP to 100 requests per windowMs
+});
+app.use(limiter);
+
+// Use environment variable for MongoDB URI
+const mongoURI = process.env.MONGO_URI;
 
 mongoose
   .connect(mongoURI, { useNewUrlParser: true, useUnifiedTopology: true })

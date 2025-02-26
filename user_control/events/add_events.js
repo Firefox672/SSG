@@ -16,7 +16,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
     const eventData = { title, date, time, place, theme, info };
 
     try {
-        const response = await fetch("https://ssg-f83i.onrender.com", { 
+        const response = await fetch("https://ssg-event-server.onrender.com/submit-event", { 
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(data),
