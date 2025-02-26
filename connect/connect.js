@@ -33,14 +33,14 @@ document.addEventListener("DOMContentLoaded", function () {
             connectBtn.classList.remove('active');
             contributeBtn.classList.add('active');
             toggleBtn.innerText = 'Connect';
-            toggleImage.src = '/assets/images/sample.jpeg'; // Change to connect image
+            toggleImage.src = '../assets/images/sample.jpeg'; // Change to connect image
         } else {
             connectForm.style.display = 'block';
             contributeForm.style.display = 'none';
             connectBtn.classList.add('active');
             contributeBtn.classList.remove('active');
             toggleBtn.innerText = 'Contribute';
-            toggleImage.src ='/assets/images/sample1.jpeg'; // Change to contribute image
+            toggleImage.src ='../assets/images/sample1.jpeg'; // Change to contribute image
         }
     });
 
