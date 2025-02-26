@@ -9,9 +9,9 @@ const app = express();
 app.use(express.json());
 
 // CORS: Only allow specific origins
-app.use(cors({ 
+app.use(cors({
   origin: ["http://localhost:5502", "https://ssg-event-server.onrender.com", "https://firefox672.github.io"], 
-  methods: ["GET", "POST"], 
+  methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type"]
 }));
 
