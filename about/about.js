@@ -5,13 +5,13 @@ const photoImage = photoContainer.querySelector('img');
 
 let isScrollingDown = false;
 let currentImageIndex = -1; // Track current image to apply transition only once
-const defaultImage = 'assets/images/1318497.jpeg'; // Default image when scrolled to top
+const defaultImage = '../assets/images/1318497.jpeg'; // Default image when scrolled to top
 
 // Images to display for each content box
 const boxImages = [
-    'assets/images/event.webp', // Image for Box 1
-    'assets/images/1357585.png',  // Image for Box 2
-    'assets/images/1357587.png'   // Image for Box 3
+    '../assets/images/event.webp', // Image for Box 1
+    '../assets/images/1357585.png',  // Image for Box 2
+    '../assets/images/1357587.png'   // Image for Box 3
 ];
 
 // Apply transition effect to image
