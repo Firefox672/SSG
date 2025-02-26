@@ -41,10 +41,10 @@ document.querySelector("form").addEventListener("submit", async (e) => {
 // Logout function
 function logout() {
     alert("You have been logged out.");
-    window.location.href = ".../user_control/login.html";
+    window.location.href = "../user_control/login.html";
 }
 
 // Navigation function
 function projects() {
-    window.location.href = "../user_control/projects/add_projects.html";
+    window.location.href = "../projects/add_projects.html";
 }
