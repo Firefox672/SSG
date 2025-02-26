@@ -15,6 +15,12 @@ app.use(cors({
   allowedHeaders: ["Content-Type"]
 }));
 
+// Unrecognized feature: 'interest-cohort'. This should remove the warning in the console.
+app.use((req, res, next) => {
+  res.setHeader("Permissions-Policy", "interest-cohort=()");
+  next();
+});
+
 // Rate limiting to prevent abuse
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes

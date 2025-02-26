@@ -19,7 +19,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
         const response = await fetch("https://ssg-event-server.onrender.com/submit-event", { 
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(data),
+            body: JSON.stringify(eventData),
         });
 
         const result = await response.json();
