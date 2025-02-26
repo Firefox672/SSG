@@ -16,10 +16,10 @@ document.querySelector("form").addEventListener("submit", async (e) => {
     const eventData = { title, date, time, place, theme, info };
 
     try {
-        const response = await fetch("http://localhost:5000/submit-event", {
+        const response = await fetch("https://ssg-f83i.onrender.com", { 
             method: "POST",
             headers: { "Content-Type": "application/json" },
-            body: JSON.stringify(eventData),
+            body: JSON.stringify(data),
         });
 
         const result = await response.json();
@@ -41,10 +41,10 @@ document.querySelector("form").addEventListener("submit", async (e) => {
 // Logout function
 function logout() {
     alert("You have been logged out.");
-    window.location.href = "/user_control/login.html";
+    window.location.href = ".../user_control/login.html";
 }
 
 // Navigation function
 function projects() {
-    window.location.href = "/user_control/projects/add_projects.html";
+    window.location.href = "../user_control/projects/add_projects.html";
 }
