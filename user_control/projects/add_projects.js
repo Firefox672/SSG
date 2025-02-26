@@ -1,6 +1,6 @@
 function logout() {
     alert("You have been logged out.");
-    window.location.href = "../user_control/login.html";
+    window.location.href = "../login.html";
 }
 
 function events() {

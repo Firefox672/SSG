@@ -41,7 +41,7 @@ document.querySelector("form").addEventListener("submit", async (e) => {
 // Logout function
 function logout() {
     alert("You have been logged out.");
-    window.location.href = "../user_control/login.html";
+    window.location.href = "../login.html";
 }
 
 // Navigation function
