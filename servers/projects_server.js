@@ -9,7 +9,7 @@ require("dotenv").config();
 const app = express();
 app.use(express.json());
 app.use(cors({ 
-  origin: ["http://localhost:5502", "https://ssg-f83i.onrender.com"],
+  origin: ["http://localhost:5502", "https://ssg-f83i.onrender.com", "https://firefox672.github.io"],
   methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type"],
 }));  // Allow all origins
