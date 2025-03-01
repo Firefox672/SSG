@@ -3,6 +3,17 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 document.addEventListener("DOMContentLoaded", function () {
+
+    // Hamburger Menu Functionality
+    const menuToggle = document.getElementById('menu-toggle');
+    const overlayMenu = document.getElementById('overlay-menu');
+
+    menuToggle.addEventListener('click', () => {
+        const isOpen = overlayMenu.style.display === 'flex';
+        overlayMenu.style.display = isOpen ? 'none' : 'flex';
+        menuToggle.classList.toggle('active');
+    });
+
     const modal = document.getElementById("modal");
     const modalContent = document.getElementById("modal-content");
 

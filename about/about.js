@@ -65,14 +65,14 @@ function handleScroll() {
         }
     });
 
-    // Reset to default image when scrolled up past the first content box
-    if (!imageUpdated && scrollY < 50) {
+    // Restore the initial image when scrolling back to the top
+    if (!imageUpdated && scrollY < 50 && currentImageIndex !== -1) {
+        currentImageIndex = -1;
         photoImage.style.opacity = 0;
         setTimeout(() => {
             photoImage.src = defaultImage;
             photoImage.style.opacity = 1;
         }, 500);
-        currentImageIndex = -1;
     }
 }
 
@@ -81,3 +81,96 @@ window.addEventListener('scroll', handleScroll);
 
 // Initial check in case page is loaded mid-scroll
 handleScroll();
+
+    document.addEventListener("DOMContentLoaded", function () {
+        if (window.innerWidth <= 768) {
+            const photoContainer = document.getElementById("photoContainer");
+            const contentBoxes = document.querySelectorAll(".content-box");
+            const photoImage = photoContainer.querySelector("img");
+            const description = document.querySelector(".description");
+            const menuToggle = document.getElementById("menu-toggle");
+            const overlayMenu = document.getElementById("overlay-menu");
+            const contentSection = document.querySelector(".content");
+    
+            let isScrollingDown = false;
+            let currentImageIndex = -1;
+            const defaultImage = "../assets/images/1318497.jpeg";
+            const boxImages = [
+                "../assets/images/event.webp",
+                "../assets/images/1357585.png",
+                "../assets/images/1357587.png"
+            ];
+    
+            let lastScrollPosition = 0;
+            window.addEventListener("scroll", () => {
+                isScrollingDown = window.scrollY > lastScrollPosition;
+                lastScrollPosition = window.scrollY;
+            });
+    
+            window.addEventListener("scroll", function () {
+                let scrollTop = window.scrollY;
+                let windowHeight = window.innerHeight;
+                
+                if (scrollTop > 50) {
+                    photoContainer.classList.add("shrink");
+                    description.style.display = "none";
+                    contentSection.style.marginTop = "calc(30vh + 20px)"; // Push content below the shrunk image
+                } else {
+                    photoContainer.classList.remove("shrink");
+                    description.style.display = "block";
+                    contentSection.style.marginTop = "10px"; // Reset margin when at the top
+                }
+                
+                let imageUpdated = false;
+                contentBoxes.forEach((box, index) => {
+                    const boxTop = box.getBoundingClientRect().top;
+                    if (boxTop < windowHeight / 2 && boxTop > 0) {
+                        if (currentImageIndex !== index) {
+                            currentImageIndex = index;
+                            photoImage.style.opacity = 0;
+                            setTimeout(() => {
+                                photoImage.src = boxImages[index];
+                                photoImage.style.opacity = 1;
+                            }, 300);
+                        }
+                        imageUpdated = true;
+                    }
+                });
+                
+                if (!imageUpdated && scrollTop < 50 && currentImageIndex !== -1) {
+                    currentImageIndex = -1;
+                    photoImage.style.opacity = 0;
+                    setTimeout(() => {
+                        photoImage.src = defaultImage;
+                        photoImage.style.opacity = 1;
+                    }, 300);
+                }
+            });
+    
+            menuToggle.addEventListener("click", () => {
+                const isOpen = overlayMenu.style.display === "flex";
+                overlayMenu.style.display = isOpen ? "none" : "flex";
+                menuToggle.classList.toggle("active");
+            });
+        
+                // Hamburger Menu Functionality
+                menuToggle.addEventListener('click', () => {
+                const isOpen = overlayMenu.style.display === 'flex';
+                overlayMenu.style.display = isOpen ? 'none' : 'flex';
+                menuToggle.classList.toggle('active');
+    });
+
+        }
+    });
+
+        // Hamburger Menu Functionality
+    const menuToggle = document.getElementById('menu-toggle');
+    const overlayMenu = document.getElementById('overlay-menu');
+
+    menuToggle.addEventListener('click', () => {
+        const isOpen = overlayMenu.style.display === 'flex';
+        overlayMenu.style.display = isOpen ? 'none' : 'flex';
+        menuToggle.classList.toggle('active');
+    });
+
+

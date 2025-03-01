@@ -50,7 +50,7 @@
                     <label for="message">Message:</label>
                     <textarea id="message" name="message" required></textarea>
                     
-                    <button type="submit">Submit</button>
+                    <button type="submit" class="submit">Submit</button>
                 </form>
             </div>
 
@@ -66,15 +66,19 @@
                     <label for="contributeMessage">Contribute:</label>
                     <textarea id="contributeMessage" name="contributeMessage" required></textarea>
                     
-                    <button type="submit">Submit</button>
+                    <button type="submit" class="submit">Submit</button>
                 </form>
             </div>
         </div>
 
         <!-- Image with Contribute Button -->
         <div class="image-container">
-            <img id="toggleImage" src="../assets/images/1357585.png" alt="Form Image" class="form-image">
-            <button id="toggleBtn" class="toggle-btn">Contribute</button>
+            <div class="image-cont">
+                <img id="toggleImage" src="../assets/images/1357585.png" alt="Form Image" class="form-image">
+            </div>
+            <div class="contribute-btn">
+                <button id="toggleBtn" class="toggle-btn">Contribute</button>
+            </div>
         </div>
     </div>
 
@@ -96,6 +100,40 @@
             <lord-icon trigger="hover" src="../assets/icons/spotify.json"></lord-icon>
         </a>
     </div>
+
+<!-- Hamburger Menu Button -->
+<div class="hamburger-menu" id="menu-toggle">
+    <div class="bar top"></div>
+    <div class="bar middle"></div>
+    <div class="bar bottom"></div>
+</div>
+
+<!-- Mobile Overlay Menu -->
+<div class="overlay-menu" id="overlay-menu">
+    <ul class="overlay-menu-items">
+        <li><a href="../about/about.html">About</a></li>
+        <li><a href="../events/events.html">Events</a></li>
+        <li><a href="../projects/projects.html">Projects</a></li>
+        <li><a href="connect.html">Connect</a></li>
+    </ul>
+    <div class="overlay-social-icons">
+        <a href="https://facebook.com" target="_blank" class="social-icon facebook">
+            <lord-icon trigger="hover" src="../assets/icons/facebook-icon.json"></lord-icon>
+        </a>
+        <a href="https://x.com" target="_blank" class="social-icon twitter">
+            <lord-icon trigger="hover" src="../assets/icons/twitter-icon.json"></lord-icon>
+        </a>
+        <a href="https://instagram.com" target="_blank" class="social-icon instagram">
+            <lord-icon trigger="hover" src="../assets/icons/instagram-icon.json"></lord-icon>
+        </a>
+        <a href="https://youtube.com" target="_blank" class="social-icon youtube">
+            <lord-icon trigger="hover" src="../assets/icons/youtube-icon.json"></lord-icon>
+        </a>
+        <a href="https://spotify.com" target="_blank" class="social-icon spotify">
+            <lord-icon trigger="hover" src="../assets/icons/spotify.json"></lord-icon>
+        </a>
+    </div>
+</div>
 
     <!-- Footer Section -->
     <footer>

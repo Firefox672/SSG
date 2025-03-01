@@ -8,3 +8,13 @@ function toggleFlip(cardElement) {
         cardElement.classList.add("flipped");
     }
 }
+
+    // Hamburger Menu Functionality
+    const menuToggle = document.getElementById('menu-toggle');
+    const overlayMenu = document.getElementById('overlay-menu');
+
+    menuToggle.addEventListener('click', () => {
+        const isOpen = overlayMenu.style.display === 'flex';
+        overlayMenu.style.display = isOpen ? 'none' : 'flex';
+        menuToggle.classList.toggle('active');
+    });
