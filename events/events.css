@@ -190,6 +190,8 @@ main{
 
 .card-back p{
     padding: 0 25px;
+    width: 90%;
+    height: 60%;
 }
 
 .card:hover .card-front {

@@ -5,11 +5,11 @@ const { exec } = require("child_process");
 require("dotenv").config();
 
 
-
 const app = express();
 app.use(express.json());
 app.use(cors({ 
-  origin: ["http://localhost:5502", "https://ssg-f83i.onrender.com", "https://firefox672.github.io"],
+  origin: ["http://localhost:5502", "https://ssg-f83i.onrender.com", "https://firefox672.github.io", "http://localhost:10000"],
+  origin:"*",
   methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type"],
 }));  // Allow all origins
@@ -71,6 +71,16 @@ app.post("/submit", async (req, res) => {
   } catch (error) {
     console.error("Error:", error);
     res.status(500).json({ error: "Failed to save data" });
+  }
+});
+
+// ✅ FIX: Add missing GET endpoint for fetching events
+app.get("/api/projects", async (req, res) => {
+  try {
+    const projects = await YoutubeEntry.find();
+    res.json(projects);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch events" });
   }
 });
 

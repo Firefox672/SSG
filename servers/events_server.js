@@ -10,7 +10,8 @@ app.use(express.json());
 
 // CORS: Only allow specific origins
 app.use(cors({
-  origin: ["http://localhost:5502", "https://ssg-event-server.onrender.com", "https://firefox672.github.io"], 
+  origin: ["http://localhost:5502", "https://ssg-event-server.onrender.com", "https://firefox672.github.io", "http://localhost:5000"], 
+  origin:"*", 
   methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type"]
 }));
@@ -54,6 +55,16 @@ const eventSchema = new mongoose.Schema({
 
 const Event = mongoose.model("Event", eventSchema);
 
+// ✅ FIX: Add missing GET endpoint for fetching events
+app.get("/api/events", async (req, res) => {
+  try {
+    const events = await Event.find();
+    res.json(events);
+  } catch (error) {
+    res.status(500).json({ error: "Failed to fetch events" });
+  }
+});
+
 // API endpoint to handle event submissions
 app.post("/submit-event", async (req, res) => {
   try {
@@ -77,5 +88,5 @@ app.post("/submit-event", async (req, res) => {
 });
 
 // Start the server
-const PORT = process.env.PORT || 10000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
