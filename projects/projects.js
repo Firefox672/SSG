@@ -171,3 +171,14 @@ document.addEventListener("click", function (e) {
 
 // Fetch projects when the page loads
 document.addEventListener('DOMContentLoaded', fetchProjects);
+
+
+// Hamburger Menu Functionality
+const menuToggle = document.getElementById('menu-toggle');
+const overlayMenu = document.getElementById('overlay-menu');
+
+menuToggle.addEventListener('click', () => {
+    const isOpen = overlayMenu.style.display === 'flex';
+    overlayMenu.style.display = isOpen ? 'none' : 'flex';
+    menuToggle.classList.toggle('active');
+});

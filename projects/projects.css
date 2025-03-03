@@ -380,13 +380,13 @@ footer {
 
 /* Hamburger to Close Transition */
 .hamburger-menu.active .top {
-    transform: rotate(45deg) translate(9px, 10px);
+    transform: rotate(45deg) translate(7px, 11px);
 }
 .hamburger-menu.active .middle {
     opacity: 0;
 }
 .hamburger-menu.active .bottom {
-    transform: rotate(-45deg) translate(9px, -11px);    
+    transform: rotate(-45deg) translate(5px, -10px);    
 }
 
 /* Overlay Menu */
@@ -469,16 +469,21 @@ footer {
     .container {
         width: 100%;
         margin: 100px auto;
+        align-items: left;
+    }
+
+    .branding{
+        padding-right: 80px;
     }
 
     .row{
-        margin: 0 0 20px 40px;
+        margin: 0 0 15px 15px;
     }
 
     .card-groups {
         flex-direction: column;
-        align-items: center;
-        gap: 20px;
+        align-items: left;
+        /* gap: 20px; */
     }
 
     .card-container {

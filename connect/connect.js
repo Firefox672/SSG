@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function () {
             connectBtn.classList.remove('active');
             contributeBtn.classList.add('active');
             toggleBtn.innerText = 'Connect';
-            toggleImage.src = '../assets/images/sample.jpeg'; // Change to connect image
+            toggleImage.src = '../assets/images/mountain.jpg'; // Change to connect image
             updateBackgroundImage(toggleImage.src);
         } else {
             connectForm.style.display = 'block';
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
             connectBtn.classList.add('active');
             contributeBtn.classList.remove('active');
             toggleBtn.innerText = 'Contribute';
-            toggleImage.src = '../assets/images/sample1.jpeg'; // Change to contribute image
+            toggleImage.src = '../assets/images/sample2.jpg'; // Change to contribute image
             updateBackgroundImage(toggleImage.src);
         }
     });

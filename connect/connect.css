@@ -311,13 +311,13 @@ footer {
 
 /* Hamburger to Close Transition */
 .hamburger-menu.active .top {
-    transform: rotate(45deg) translate(9px, 10px);
+    transform: rotate(45deg) translate(7px, 11px);
 }
 .hamburger-menu.active .middle {
     opacity: 0;
 }
 .hamburger-menu.active .bottom {
-    transform: rotate(-45deg) translate(9px, -11px);    
+    transform: rotate(-45deg) translate(5px, -10px);    
 }
 
 /* Overlay Menu */
@@ -363,9 +363,13 @@ footer {
 /* Responsive Design */
 @media (max-width: 768px) {
 
+    .branding{
+        padding-right: 80px;
+    }
+
 /* form container */
     .form-container{
-        width: 300px;
+        width: 220px;
         align-items: center;
         justify-content: center;
         padding-left: 40px;

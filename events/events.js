@@ -46,16 +46,16 @@ function populateEventCards(events) {
             <div class="card-inner">
                 <div class="card-front">
                     <h3>${event.title}</h3>
-                    <p>Time: ${event.time}<br>Date: ${event.date}</p>
+                    <p>${event.time}<br>${event.date}</p>
                     <h4>Overview</h4>
                 </div>
                 <div class="card-back" style="overflow-y: auto; scrollbar-width: none; -ms-overflow-style: none; white-space: pre-line; word-wrap: break-word;">
                     <h3>${event.title}</h3>
                     <p>
-                        Meet me: ${event.date}<br>
+                        Date: ${event.date}<br>
                         Time: ${event.time}<br>
-                        At: ${event.place}<br>
-                        ${event.theme}<br>
+                        Place: ${event.place}<br>
+                        Theme: ${event.theme}<br>
                         Info: ${event.info}
                     </p>
                 </div>
