@@ -5,13 +5,31 @@ const photoImage = photoContainer.querySelector('img');
 
 let isScrollingDown = false;
 let currentImageIndex = -1; // Track current image to apply transition only once
-const defaultImage = '../assets/images/1318497.jpeg'; // Default image when scrolled to top
+const defaultImage = '../assets/images/w7.jpg'; // Default image when scrolled to top
 
 // Images to display for each content box
 const boxImages = [
-    '../assets/images/event.webp', // Image for Box 1
-    '../assets/images/1357585.png',  // Image for Box 2
-    '../assets/images/1357587.png'   // Image for Box 3
+    '../assets/images/a1.heic', // Image for Box 1
+    '../assets/images/a2.jpg',  // Image for Box 2
+    '../assets/images/a3.jpg',   // Image for Box 3
+    '../assets/images/a4.jpg', // Image for Box 4
+    '../assets/images/a5.jpg',  // Image for Box 5
+    '../assets/images/a6.jpg',   // Image for Box 6
+    '../assets/images/a7.jpg', // Image for Box 7
+    '../assets/images/a8.jpg',  // Image for Box 8
+    '../assets/images/a9.jpg',   // Image for Box 9
+    '../assets/images/a10.jpg', // Image for Box 10
+    '../assets/images/a11.jpg',  // Image for Box 11
+    '../assets/images/a12.jpg',   // Image for Box 12
+    '../assets/images/a13.jpg', // Image for Box 13
+    '../assets/images/a14.jpg',  // Image for Box 14
+    '../assets/images/a15.jpg',   // Image for Box 15
+    '../assets/images/a16.jpg', // Image for Box 16
+    '../assets/images/a17.jpg',  // Image for Box 17
+    '../assets/images/a18.jpg',   // Image for Box 18
+    '../assets/images/a19.jpg', // Image for Box 19
+    '../assets/images/a20.jpg',  // Image for Box 20
+    '../assets/images/a21.jpg'   // Image for Box 21
 ];
 
 // Apply transition effect to image
@@ -94,11 +112,29 @@ handleScroll();
     
             let isScrollingDown = false;
             let currentImageIndex = -1;
-            const defaultImage = "../assets/images/1318497.jpeg";
+            const defaultImage = "../assets/images/a_m1.jpg";
             const boxImages = [
-                "../assets/images/event.webp",
-                "../assets/images/1357585.png",
-                "../assets/images/1357587.png"
+                '../assets/images/a1.heic', // Image for Box 1
+                '../assets/images/a2.jpg',  // Image for Box 2
+                '../assets/images/a3.jpg',   // Image for Box 3
+                '../assets/images/a4.jpg', // Image for Box 4
+                '../assets/images/a5.jpg',  // Image for Box 5
+                '../assets/images/a6.jpg',   // Image for Box 6
+                '../assets/images/a7.jpg', // Image for Box 7
+                '../assets/images/a8.jpg',  // Image for Box 8
+                '../assets/images/a9.jpg',   // Image for Box 9
+                '../assets/images/a10.jpg', // Image for Box 10
+                '../assets/images/a11.jpg',  // Image for Box 11
+                '../assets/images/a12.jpg',   // Image for Box 12
+                '../assets/images/a13.jpg', // Image for Box 13
+                '../assets/images/a14.jpg',  // Image for Box 14
+                '../assets/images/a15.jpg',   // Image for Box 15
+                '../assets/images/a16.jpg', // Image for Box 16
+                '../assets/images/a17.jpg',  // Image for Box 17
+                '../assets/images/a18.jpg',   // Image for Box 18
+                '../assets/images/a19.jpg', // Image for Box 19
+                '../assets/images/a20.jpg',  // Image for Box 20
+                '../assets/images/a21.jpg'   // Image for Box 21
             ];
     
             let lastScrollPosition = 0;
